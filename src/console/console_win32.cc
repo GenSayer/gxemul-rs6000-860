@@ -164,7 +164,7 @@ void start_xterm_platform(int handle)
 		fprintf(stderr, " [Failed to create pipe handle set 1]\n");
 		exit(1);
 	}
-	swprintf(cmdline, L"%s -WW@S%llu,%llu", modulefile, pipehandles[0], pipehandlesB[1]);
+	swprintf(cmdline, L"\"%s\" -WW@S%llu,%llu", modulefile, pipehandles[0], pipehandlesB[1]);
 	SetHandleInformation(pipehandles[0], HANDLE_FLAG_INHERIT, HANDLE_FLAG_INHERIT);
 	SetHandleInformation(pipehandlesB[1], HANDLE_FLAG_INHERIT, HANDLE_FLAG_INHERIT);
 
